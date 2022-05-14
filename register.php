@@ -6,31 +6,28 @@
 	<body>
 		<?php 
 			extract($_POST);
-			if (!$username || !$password) {
+			if (!$username || !$password || !$email) {
 				fieldsBlank();
 				die();
 			}
-            $query="select * from users where username="."'{$username}'"." and password="."'{$password}';";
+            $query="insert into users (username, password, email) values "."("."'{$username}',"."'{$password}',"."'{$email}'".");";
             $database = mysqli_connect($db_server, $db_user, $db_password, $db_name);
             if (!$database || $database -> connect_errno) {
                     echo "<p>Failed to connect to MySQL: " . $database -> connect_error."</p>";
                     exit();
             }
-            if (!($results = mysqli_query($database, $query)) || $results->num_rows === 0) {
-					accessDenied();
+            mysqli_query($database, $query);
+            if (!(mysqli_insert_id($database))) {
+                    echo "Error: ".mysqli_error($database);
                     exit();
             }
-			echo "Logged in as {$username}";
+			echo "Registered as {$username} with id ".mysqli_insert_id($database);
 			mysqli_close($database);
 		?>
 		<a href='index.php'><button>Back to Home Page</button></a>
 					
-		<?php function accessDenied() {
-			echo "<p>Password or username not correct. Access Denied.</p>";
-			echo "<a href='loginform.php'><button>Back to Login</button></a>";
-		} ?>
 		<?php function fieldsBlank() {
-			echo "<p>Password or username is not provided. Access Denied.</p>";
+			echo "<p>Required field is not provided. Registration Failed.</p>";
 			echo "<a href='loginform.php'><button>Back to Login</button></a>";
 		} ?>
 	</body>
