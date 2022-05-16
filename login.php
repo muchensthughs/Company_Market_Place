@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<?php include 'constants.php';?>
-	</head>
-	<body>
-		<?php 
+<?php include 'constants.php';?>
+<?php 
 			extract($_POST);
 			if (!$username || !$password) {
 				fieldsBlank();
@@ -20,18 +15,25 @@
 					accessDenied();
                     exit();
             }
-			echo "Logged in as {$username}";
+			$row = mysqli_fetch_array($results);
+			setcookie('userId', $row['id']);
+			setcookie('userName', $row['username']);
 			mysqli_close($database);
-		?>
-		<a href='index.php'><button>Back to Home Page</button></a>
-					
-		<?php function accessDenied() {
+?>
+<?php function accessDenied() {
 			echo "<p>Password or username not correct. Access Denied.</p>";
 			echo "<a href='loginform.php'><button>Back to Login</button></a>";
 		} ?>
-		<?php function fieldsBlank() {
+<?php function fieldsBlank() {
 			echo "<p>Password or username is not provided. Access Denied.</p>";
 			echo "<a href='loginform.php'><button>Back to Login</button></a>";
 		} ?>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	</head>
+	<body>
+		<a href='index.php'><button>Back to Home Page</button></a>
 	</body>
 </html>

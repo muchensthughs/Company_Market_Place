@@ -2,8 +2,9 @@
 <html lang="en">
 	<head>
 		<?php include 'constants.php';?>
+		<link rel="stylesheet" href="header.css">
+		<?php include 'header.php';?>
 	</head>
 	<body>
-		<h1>Company Market Place</h1>
 	</body>
 </html>
