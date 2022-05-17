@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	</head>
-	<body>
-		<form method="post" action="register.php">
+<?php include 'style.php'?>
+
+<head>
+</head>
+
+<body>
+
+    <div class="pt-5  w-25 mx-auto">
+        <form method="post" action="register.php">
             <p>
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username"/>
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" name="username" id="username" />
             </p>
             <p>
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email"/>
+                <label for="email" class="form-label">Email</label>
+                <input type="text" class="form-control" name="email" id="email" />
             </p>
             <p>
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password"/>
-            </p>            
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" id="password" />
+            </p>
             <p>
-                <input type="submit" />
+                <input type="submit" class="btn btn-primary" />
             </p>
         </form>
-	</body>
+
+    </div>
+
+</body>
+
 </html>
