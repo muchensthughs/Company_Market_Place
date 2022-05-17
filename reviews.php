@@ -22,6 +22,8 @@
     }
 ?>
    <div class=" pt-4 w-75 mx-auto">
+   <h2 class="pb-4 border-bottom">Products Reviews:</h2>
+
   <?php foreach($results as $row):?>
         <div class="card ">
         <div class="card-header">

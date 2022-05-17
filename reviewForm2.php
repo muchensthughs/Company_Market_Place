@@ -9,7 +9,7 @@
    $userId = $_COOKIE['userId'];
 ?>
 <body>
-<div class=" w-50 mx-auto">
+<div class=" pt-4 w-75 mx-auto">
         <form method="post" action="submitreview.php">
         <input type="hidden" id="user_id" name="user_id" value='<?php echo "$userId";?>'>
             <input type="hidden" id="product_id" name="product_id" value="9">
