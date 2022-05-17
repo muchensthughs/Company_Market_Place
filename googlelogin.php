@@ -45,7 +45,13 @@ if(isset($_GET['code'])):
         $email = mysqli_real_escape_string($database, $google_account_info->email);
         $profile_pic = mysqli_real_escape_string($database, $google_account_info->picture);
         
-       
+        // should be removed after google users table design
+        setcookie('userId',$id); 
+        setcookie('userName',$full_name);
+        header('Location: index.php');
+        exit;
+
+        // check in google users table
         $get_user = mysqli_query($database, "SELECT `google_id` FROM `googleusers` WHERE `google_id`='$id'");
        
         if(mysqli_num_rows($get_user) > 0){
