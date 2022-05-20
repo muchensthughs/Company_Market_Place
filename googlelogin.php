@@ -48,7 +48,8 @@ if(isset($_GET['code'])):
         $get_user = mysqli_query($database, "SELECT `id` FROM `users` WHERE `google_id`='$id'");
         
         if(mysqli_num_rows($get_user) > 0){
-            setcookie('userId',$id); 
+            $user = mysqli_fetch_array($get_user);
+            setcookie('userId',$user['id']); 
             setcookie('userName',$full_name);
             header('Location: index.php');
             exit;
