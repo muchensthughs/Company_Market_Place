@@ -7,13 +7,14 @@
 </head>
 <?php  
    $userId = $_COOKIE['userId'];
+   $productId = "9";
 ?>
 
 <body>
     <div class=" pt-4 w-75 mx-auto">
         <form method="post" action="submitreview.php">
             <input type="hidden" id="user_id" name="user_id" value='<?php echo "$userId";?>'>
-            <input type="hidden" id="product_id" name="product_id" value="9">
+            <input type="hidden" id="product_id" name="product_id"  value='<?php echo "$productId";?>'>
             <label class="rating"><strong>Please rate the product</strong>
                 <input class="rating" max="5" oninput="this.style.setProperty('--value', `${this.valueAsNumber}`)"
                     step="1" style="--value:3" type="range" value="3" id="rating" name="rating">

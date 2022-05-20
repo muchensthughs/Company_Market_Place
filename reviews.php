@@ -7,6 +7,8 @@
 
 <body>
     <?php include 'constants.php';
+    
+    //Need to fetch productId from params 
     $productId = 9;
     
     $query="select * from reviews where product_id="."'{$productId}';";

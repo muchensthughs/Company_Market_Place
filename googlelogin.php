@@ -4,11 +4,10 @@
 require 'constants.php';
 
 
-// if(isset($_COOKIE['userId'])){
-//     //header('Location: home.php');
-//     echo "Already Logged in !";
-//     exit;
-// }
+if(isset($_COOKIE['userId'])){
+    echo "Already Logged in !";
+  
+}
 require 'google-api/vendor/autoload.php';
 
 // Creating new google client instance
@@ -45,17 +44,10 @@ if(isset($_GET['code'])):
         $email = mysqli_real_escape_string($database, $google_account_info->email);
         $profile_pic = mysqli_real_escape_string($database, $google_account_info->picture);
         
-        // should be removed after google users table design
-        setcookie('userId',$id); 
-        setcookie('userName',$full_name);
-        header('Location: index.php');
-        exit;
-
         // check in google users table
-        $get_user = mysqli_query($database, "SELECT `google_id` FROM `googleusers` WHERE `google_id`='$id'");
-       
+        $get_user = mysqli_query($database, "SELECT `id` FROM `users` WHERE `google_id`='$id'");
+        
         if(mysqli_num_rows($get_user) > 0){
-
             setcookie('userId',$id); 
             setcookie('userName',$full_name);
             header('Location: index.php');
@@ -63,18 +55,17 @@ if(isset($_GET['code'])):
 
         }
         else{
-
             //if user not exists we will insert the user
-            $insert = mysqli_query($db_connection, "INSERT INTO `googleusers`(`google_id`,`name`,`email`,`profile_image`) VALUES('$id','$full_name','$email','$profile_pic')");
+            $insert = mysqli_query($database, "INSERT INTO `users`(`google_id`,`username`,`email`) VALUES('$id','$full_name','$email')");
 
             if($insert){
-                setcookie('userId',$id); 
+                setcookie('userId',mysqli_insert_id($database)); 
                 setcookie('userName',$full_name);
                 header('Location: index.php');
                 exit;
             }
             else{
-                echo "Sign up failed!(Something went wrong).";
+                echo "Google Sign in failed!(Something went wrong).";
             }
 
         }
