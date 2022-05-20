@@ -1,5 +1,5 @@
 <?php include 'constants.php';?>
-<?php 
+<?php
 			extract($_POST);
 			if (!$username || !$password) {
 				fieldsBlank();
@@ -34,6 +34,6 @@
 	<head>
 	</head>
 	<body>
-		<a href='index.php'><button>Back to Home Page</button></a>
+		<a href='home.php'><button>Back to Home Page</button></a>
 	</body>
 </html>

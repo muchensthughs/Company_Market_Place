@@ -4,7 +4,7 @@
 		<?php include 'constants.php';?>
 	</head>
 	<body>
-		<?php 
+		<?php
 			extract($_POST);
 			if (!$username || !$password || !$email) {
 				fieldsBlank();
@@ -24,8 +24,8 @@
 			echo "Registered as {$username} with id ".mysqli_insert_id($database);
 			mysqli_close($database);
 		?>
-		<a href='index.php'><button>Back to Home Page</button></a>
-					
+		<a href='home.php'><button>Back to Home Page</button></a>
+
 		<?php function fieldsBlank() {
 			echo "<p>Required field is not provided. Registration Failed.</p>";
 			echo "<a href='loginform.php'><button>Back to Login</button></a>";
