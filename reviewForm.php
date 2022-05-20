@@ -7,7 +7,7 @@
 </head>
 <?php  
    $userId = $_COOKIE['userId'];
-   $productId = "9";
+   $productId = $_GET['productId'];
 ?>
 
 <body>

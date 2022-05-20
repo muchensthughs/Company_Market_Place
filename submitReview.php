@@ -42,6 +42,8 @@
             //         exit();
             // }
 			echo "Successfully Review Submitted" ;
+			echo "<hr>";
+			echo "<button><a href='product.php?productId=$product_id'>Go Back to Product</a></button>";
 			mysqli_close($database);
 		?>
 		<!-- <a href='index.php'><button>Back to Home Page</button></a> -->
