@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<?php include 'style.php'?>
-
-<head>
-</head>
-
-<body>
     <?php include 'constants.php';
     
     //Need to fetch productId from params 
-    $productId = 9;
+    //$productId = 9;
     
     $query="select * from reviews where product_id="."'{$productId}';";
     
@@ -19,12 +11,14 @@
         exit();
     }
 
-    if(mysqli_num_rows($results) == 0){
-        echo "No Reviews Yet";
-    }
 ?>
    <div class=" pt-4 w-75 mx-auto">
    <h2 class="pb-4 border-bottom">Products Reviews:</h2>
+
+   <?php if(mysqli_num_rows($results) == 0){
+        echo "No Reviews Yet";
+    }
+    ?>
 
   <?php foreach($results as $row):?>
         <div class="card ">
@@ -40,6 +34,3 @@
 
     <?php endforeach;?>
     <div>
-
-
-</body>

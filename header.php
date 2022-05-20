@@ -1,4 +1,4 @@
-<h1><a href="index.php" class="logo">Market Place for Our Companies</a></h1>
+<h1><a href="index.php" class="logo" style = "text-decoration:none;">Market Place for Our Companies</a></h1>
 <nav class="nav-items">
   
  <?php 

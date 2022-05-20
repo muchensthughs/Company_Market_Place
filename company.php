@@ -49,14 +49,14 @@ if (!$companyName) {
     // product_id, name, company_name, description, url, visits
     foreach ($products as $row) {
         print("<li>");
-        print("<a href='$row[4]'>" . "$row[1]" . "</a>" . "<br>" . "$row[3]");
+        print("<a href='product.php?productId=$row[0]'>" . "$row[1]" . "</a>" . "<br>" . "$row[3]");
         print("</li>");
     }
     print("</ol>");
 
     print("<hr>");
 
-    print("<h3>Top 5 Products</h3>");
+    print("<h3>Top 5 Visited Products</h3>");
     $top5Prod = get_top_5($database, $companyName);
 
     print("<table>");
