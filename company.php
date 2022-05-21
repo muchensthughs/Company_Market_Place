@@ -16,20 +16,20 @@ if (!$companyName) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo "$companyName ? $companyName : 'Company'" . "Products"; ?></title>
     <style>
-        table,
-        td,
-        th {
-            border: 1px solid black;
-        }
+    table,
+    td,
+    th {
+        border: 1px solid black;
+    }
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-        td {
-            text-align: center;
-        }
+    td {
+        text-align: center;
+    }
     </style>
 </head>
 
@@ -85,6 +85,33 @@ if (!$companyName) {
     }
     print("</table>");
 
+    if(!isset($_COOKIE['userId'])){
+        echo "No Histroy as no user is logged in";
+    }
+    else {
+
+        print("</ol>");
+
+        print("<hr>");
+    
+        print("<h3>User Histroy(Upto Last 10 visits)</h3>");
+        $top5Prod = get_user_histroy($database, $companyName);
+        if(sizeof($top5Prod) == 0) {
+            echo "User has not visited any product in this company yet";
+        }
+        else
+    {
+        print("<table>");
+        print("<tr><th>Product Name</th><th>Time Visited</th></tr>");
+        foreach ($top5Prod as $row) {
+            print("<tr>");
+            print("<td>$row[5]</td><td>$row[3]</td>");
+            print("</tr>");
+        }
+        print("</table>");}
+        
+    }
+
 
     mysqli_close($database);
     ?>
@@ -120,9 +147,24 @@ if (!$companyName) {
             
         return $list;
     }
+    function get_user_histroy($db, $companyName){
+        $userId = $_COOKIE['userId'];
+        $q = "select * FROM `visits` JOIN products 
+        ON visits.product_id = products.product_id
+        where user_id = '$userId' AND company_name = '$companyName'
+        ORDER BY date DESC
+        LIMIT 10;";
+        $list = array();
+        $res = mysqli_query($db, $q);
+        while ($row = mysqli_fetch_array($res))
+            $list[] = $row;
+        return $list;
+    }
     ?>
 
-    
+
+
+
 
 </body>
 
