@@ -69,7 +69,7 @@
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
             <h4>Anesha Pandian</h4>
-            <p><a class="btn btn-default" href="http://google.com/">Visit site >></a></p>
+            <p><a class="btn btn-default" href="company.php?companyName=Mipelo">Visit site >></a></p>
         </div>
       </div>
 </div> </div> </div>
