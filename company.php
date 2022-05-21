@@ -68,6 +68,24 @@ if (!$companyName) {
     }
     print("</table>");
 
+    print("</ol>");
+
+    print("<hr>");
+
+    
+    print("<h3>Top 5 Rated(Avg) Products</h3>");
+    $top5Prod = get_top_5_reviewed($database, $companyName);
+
+    print("<table>");
+    print("<tr><th>Product Name</th><th>Visit Times</th></tr>");
+    foreach ($top5Prod as $row) {
+        print("<tr>");
+        print("<td>$row[0]</td><td>$row[1]</td>");
+        print("</tr>");
+    }
+    print("</table>");
+
+
     mysqli_close($database);
     ?>
 
@@ -91,7 +109,20 @@ if (!$companyName) {
             $list[] = $row;
         return $list;
     }
+
+    function get_top_5_reviewed($db, $companyName)
+    {
+        $q = "select name, COALESCE(Avg(R.rating),0) FROM reviews AS R RIGHT JOIN products AS P ON R.product_id = P.product_id where company_name = '$companyName' GROUP BY P.product_id ORDER BY AVG(rating) DESC LIMIT 5;";
+        $list = array();
+        $res = mysqli_query($db, $q);
+        while ($row = mysqli_fetch_array($res))
+            $list[] = $row;
+            
+        return $list;
+    }
     ?>
+
+    
 
 </body>
 
