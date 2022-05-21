@@ -53,19 +53,19 @@
       <div class="row">
         <div class="col-lg-4">
           <h4>Mu Chen</h4>
-            <p><a class="btn btn-default" href="https://google.com/" role="button">Visit site >></a></p>
+            <p><a class="btn btn-default" href="company.php?companyName=hellopika" role="button">Visit site >></a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <h4>Avinash Pakala</h4>
-            <p><a class="btn btn-default" href="https://google.com/" role="button">Visit site >></a></p>
+            <p><a class="btn btn-default" href="company.php?companyName=nftart" role="button">Visit site >></a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <h4>Evan Yang</h4>
-          <p><a class="btn btn-default" href="https://google.com/" role="button">View site >></a></p>
+          <p><a class="btn btn-default" href="company.php?companyName=My Cram School" role="button">View site >></a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
             <h4>Muhammed Mahmood</h4>
-            <p><a class="btn btn-default" href="http://google.com/">Visit site >></a></p>
+            <p><a class="btn btn-default" href="company.php?companyName=qaraar">Visit site >></a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
             <h4>Anesha Pandian</h4>
