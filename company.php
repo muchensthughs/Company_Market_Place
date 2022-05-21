@@ -102,10 +102,10 @@ if (!$companyName) {
         else
     {
         print("<table>");
-        print("<tr><th>Product Name</th><th>Time Visited</th></tr>");
+        print("<tr><th>Product Name</th><th>Time Visited</th><th>Url visited</th></tr>");
         foreach ($top5Prod as $row) {
             print("<tr>");
-            print("<td>$row[5]</td><td>$row[3]</td>");
+            print("<td>$row[5]</td><td>$row[3]</td><td>$row[8]</td>");
             print("</tr>");
         }
         print("</table>");}
