@@ -77,7 +77,7 @@ if (!$companyName) {
     $top5Prod = get_top_5_reviewed($database, $companyName);
 
     print("<table>");
-    print("<tr><th>Product Name</th><th>Visit Times</th></tr>");
+    print("<tr><th>Product Name</th><th>Avg Rating</th></tr>");
     foreach ($top5Prod as $row) {
         print("<tr>");
         print("<td>$row[0]</td><td>$row[1]</td>");
