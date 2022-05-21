@@ -13,7 +13,7 @@
 
 <body>
     <div class=" pt-4 w-75 mx-auto">
-        <form method="post" action="submitreview.php">
+        <form method="post" action="submitReview.php">
             <input type="hidden" id="user_id" name="user_id" value='<?php echo "$userId";?>'>
             <input type="hidden" id="product_id" name="product_id"  value='<?php echo "$productId";?>'>
             <label class="rating"><strong>Please rate the product</strong>

@@ -66,7 +66,7 @@ if (!$productId) {
 
     if ($_COOKIE['userName']) {
         if (!has_review_from_current_user($database, $productId, $_COOKIE['userId'])) {
-            echo "<a href='reviewform.php?productId=$productId'>Leave a review</a>";
+            echo "<a href='reviewForm.php?productId=$productId'>Leave a review</a>";
         }
     } else {
         echo "<a href='loginform.php'>Login to leave a review</a>";

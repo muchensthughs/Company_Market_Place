@@ -43,12 +43,10 @@
 			echo "<hr>";
 			echo "<button><a href='product.php?productId=$product_id'>Go Back to Product</a></button>";
 			mysqli_close($database);
-		?>
-		<!-- <a href='index.php'><button>Back to Home Page</button></a> -->
-					
+		?>					
 		<?php function fieldsBlank() {
 			echo "<p>Required field is not provided.Rating and comment both mandatory fields.Review Submission Failed.</p>";
-			// echo "<a href='loginform.php'><button>Back to Login</button></a>";
+			echo "<button><a href='product.php?productId=$product_id'>Go Back to Product</a></button>";
 		} ?>
 	</body>
 </html>
