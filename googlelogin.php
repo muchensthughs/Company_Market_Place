@@ -18,7 +18,7 @@ $client->setClientId('548588993899-u5m4ule12b0hl7arkrkmoa4mtha6f51p.apps.googleu
 // Enter your Client Secrect
 $client->setClientSecret('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');
 // Enter the Redirect URL
-$client->setRedirectUri('http://ec2-13-57-226-80.us-west-1.compute.amazonaws.com/googlelogin.php');
+$client->setRedirectUri('https://crossdomainmarket.herokuapp.com/googlelogin.php');
 
 // Adding those scopes which we want to get (email & profile Information)
 $client->addScope("email");
