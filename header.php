@@ -2,7 +2,7 @@
 <h1><a href="home.php" class="logo" style = "text-decoration:none; margin-left: 20px;">Market Place for Our Companies</a></h1>
 <nav class="nav-items">
  <?php
-    if ( isset($_COOKIE['username']) ) {
+    if ( isset($_COOKIE['userName']) ) {
         echo "<span>Welcome, ".$_COOKIE['userName']."</span>";
     } else {
         echo "<a href='loginform.php'>Login</a>";
