@@ -6,12 +6,12 @@ Create your own branch when developing. Make sure fetch all the updates before m
 
 Test Cases:
 
-+ Register Account
-+ Login to Account
-+ Login through Google
-+ Go to Company Marketplace Site
-+ Go to Company Site
-+ Go to Product Marketplace page
-+ Go to Product page
-+ Leave Review on Product Marketplace page
-+ See website visits increase and Product top five list be updated.
+1. Register Account
+1. Login to Account
+1. Login through Google
+1. Go to Company Marketplace Site
+1. Go to Company Site
+1. Go to Product Marketplace page
+1. Go to Product page
+1. Leave Review on Product Marketplace page
+1. See website visits increase and Product top five list be updated.
