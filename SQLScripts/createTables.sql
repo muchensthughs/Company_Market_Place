@@ -24,3 +24,15 @@ CREATE TABLE IF NOT EXISTS reviews (
     FOREIGN KEY (user_id)
     REFERENCES users(id)
 )  ENGINE=INNODB;
+
+CREATE TABLE IF NOT EXISTS visits (
+    `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+    product_id INT NOT NULL,
+    user_id INT NOT NULL,
+    `date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (user_id, `date`),
+    FOREIGN KEY (product_id)
+    REFERENCES products(product_id),
+    FOREIGN KEY (user_id)
+    REFERENCES users(id)
+)  ENGINE=INNODB;
