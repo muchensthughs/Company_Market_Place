@@ -40,10 +40,10 @@
 		$top5Prod = get_top_5($database);
 
 		print("<table>");
-		print("<tr><th>Product Name</th><th>Company</th><th>Description</th><th>URL</th><th>Visit Times</th></tr>");
+		print("<tr><th>Product Name</th><th>Company</th><th>Description</th><th>Visit Times</th></tr>");
 		foreach ($top5Prod as $row) {
 			print("<tr>");
-			print("<td>$row[1]</td><td>$row[2]<td>$row[3]<td>$row[4]<td>$row[5]</td>");
+			print("<td><a href='product.php?productId=$row[0]'>$row[1]</a></td><td>$row[2]<td>$row[3]</td><td>$row[5]</td>");
 			print("</tr>");
 		}
 		print("</table>");
