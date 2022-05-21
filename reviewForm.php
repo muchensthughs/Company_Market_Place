@@ -8,6 +8,7 @@
 <?php  
    $userId = $_COOKIE['userId'];
    $productId = $_GET['productId'];
+   
 ?>
 
 <body>
