@@ -10,8 +10,8 @@ Test Cases:
 1. Login to Account
 1. Login through Google
 1. Go to Company Marketplace Site
-1. Go to Company Site
+1. Go to Actual Company Site
 1. Go to Product Marketplace page
-1. Go to Product page
+1. Go to Actual Product page
 1. Leave Review on Product Marketplace page
 1. See website visits increase and Product top five list be updated.
