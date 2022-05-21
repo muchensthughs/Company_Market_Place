@@ -6,7 +6,6 @@
 	<body>
 		<?php 
 			extract($_POST);
-			print_r("$user_id  ,$product_id, $rating, $comment");
 			if (!$user_id || !$product_id || !$rating || !$comment) {
 				fieldsBlank();
 				die();
@@ -27,7 +26,6 @@
 
             $query="insert into reviews (user_id, product_id, rating, comment) values "."("."'{$user_id}',"."'{$product_id}',"."'{$rating}',"."'{$comment}'".");";
             
-			print_r($query);
             $database = mysqli_connect($db_server, $db_user, $db_password, $db_name);
             
             if (!$database || $database -> connect_errno) {
@@ -49,8 +47,8 @@
 		<!-- <a href='index.php'><button>Back to Home Page</button></a> -->
 					
 		<?php function fieldsBlank() {
-			echo "<p>Required field is not provided. Registration Failed.</p>";
-			echo "<a href='loginform.php'><button>Back to Login</button></a>";
+			echo "<p>Required field is not provided.Rating and comment both mandatory fields.Review Submission Failed.</p>";
+			// echo "<a href='loginform.php'><button>Back to Login</button></a>";
 		} ?>
 	</body>
 </html>
