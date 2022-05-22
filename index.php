@@ -48,6 +48,20 @@
 		}
 		print("</table>");
 
+		print("<hr>");
+
+		print("<h3>Top 5 Best Rated Products in our Market Place</h3>");
+		$top5Prod = get_top_5_reviewed($database);
+
+		print("<table>");
+		print("<tr><th>Product Name</th><th>Company</th><th>Rating(Avg)</th></tr>");
+		foreach ($top5Prod as $row) {
+			print("<tr>");
+			print("<td>$row[0]</td><td>$row[1]</td><td>$row[2]</td>");
+			print("</tr>");
+		}
+		print("</table>");
+
 		mysqli_close($database);
 		?>
 
@@ -62,7 +76,19 @@
 				$list[] = $row;
 			return $list;
 		}
+
+		function get_top_5_reviewed($db)
+		{
+			$q = "select name,company_name, COALESCE(Avg(R.rating),0) FROM reviews AS R RIGHT JOIN products AS P ON R.product_id = P.product_id  GROUP BY P.product_id ORDER BY AVG(rating) DESC LIMIT 5;";
+			$list = array();
+			$res = mysqli_query($db, $q);
+			while ($row = mysqli_fetch_array($res))
+				$list[] = $row;
+				
+			return $list;
+		}
 		?>
+	
 	</body>
 
 </html>
