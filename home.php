@@ -76,7 +76,7 @@
         <footer  id="footer">
 <!--  <p class="pull-right"><a href="#">Back to top</a></p> -->
 
-      <p style="margin-left: 10px;">&copy; CMPE 272- Enterprise Software Platforms.</p>
+      <!-- <p style="margin-left: 10px;">&copy; CMPE 272- Enterprise Software Platforms.</p> -->
   </footer>
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>

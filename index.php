@@ -62,6 +62,8 @@
 		}
 		print("</table>");
 
+	    print("<p style='margin-left: 10px;'>&copy; CMPE 272- Enterprise Software Platforms.</p> ");
+
 		mysqli_close($database);
 		?>
 
